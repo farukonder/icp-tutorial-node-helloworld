@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: icp-tutorial-node-helloworld-c
+  labels:
+    app: icp-tutorial-node-helloworld-c
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: icp-tutorial-node-helloworld-c
+  template:
+    metadata:
+      labels:
+        app: icp-tutorial-node-helloworld-c
+    spec:
+      containers:
+      - name: icp-tutorial-node-helloworld-c
+        image: faruk/icp-tutorial-node-helloworld
+        ports:
+        - containerPort: 8081
+

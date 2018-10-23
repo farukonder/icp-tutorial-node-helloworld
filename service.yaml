@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: icp-tutorial-node-helloworld
+spec:
+  selector:
+    app: icp-tutorial-node-helloworld-c
+  ports:
+  - protocol: TCP
+    port: 8082
+    targetPort: 8081
+    nodePort: 30686
+  type: NodePort
